@@ -19,3 +19,13 @@ def contador_submarino(lista, nombre):
     print("¿Cuántas {1}as son más pequeñas que la {1} anterior? {0}".format(contador_medida_decremental, nombre))
 
 contador_submarino(medidas, "medida")
+
+ventanas = []
+limite_ventanas = len(medidas) - 3
+
+for iteracion in range(len(medidas)):
+    if iteracion > limite_ventanas:
+        break
+    ventanas.append(sum(medidas[iteracion:iteracion+3]))
+
+contador_submarino(ventanas, "ventana")

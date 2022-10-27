@@ -6,3 +6,5 @@ Antes de que te des cuenta, estás dentro de un submarino que los Elfos mantiene
 Tus instintos te dicen que para salvar la Navidad, necesitarás obtener las cincuenta estrellas antes del 25 de diciembre.
 
 Recoge estrellas resolviendo acertijos. Dos rompecabezas estarán disponibles cada día en el calendario de Adviento; el segundo rompecabezas se desbloquea cuando completa el primero. Cada rompecabezas otorga una estrella . ¡Buena suerte!
+
+https://adventofcode.com/2021

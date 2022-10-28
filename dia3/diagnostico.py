@@ -1,3 +1,6 @@
+from time import sleep
+
+
 informe = []
 with open('dia3/input.txt', 'r') as archivo:
     for linea in archivo:
@@ -45,4 +48,71 @@ def consumo_energia(informe):
     consumo_energia = tasa_gamma_decimal * tasa_epsilon_decimal
     return consumo_energia
 
+class SoporteVital():
+    contador_ceros = 0
+    contador_unos = 0
+    unos = []
+    ceros = []
+
+    def __init__(self, informe):
+        self.informe = informe
+        generador_oxigeno = self.clasificar_generador_oxigeno()
+        depurador_CO2 = self.clasificar_depurador_CO2()
+        self.clasificacion = binario_a_decimal(''.join(generador_oxigeno)) * binario_a_decimal(''.join(depurador_CO2))
+
+    def clasificar_generador_oxigeno(self):
+        proximo_recorrido = self.informe
+
+        for i in range(len(self.informe[0])):
+            self.contador_ceros = 0
+            self.contador_unos = 0
+            self.unos = []
+            self.ceros = []
+
+            for binario in proximo_recorrido:
+                if binario[i] == '0':
+                    self.contador_ceros = self.contador_ceros + 1
+                    self.ceros.append(binario)
+                else:
+                    self.contador_unos = self.contador_unos + 1
+                    self.unos.append(binario)
+
+            if self.contador_unos >= self.contador_ceros:
+                proximo_recorrido = self.unos
+            else:
+                proximo_recorrido = self.ceros
+
+            if len(proximo_recorrido) == 1:
+                binario = proximo_recorrido[0]
+                return binario
+
+    def clasificar_depurador_CO2(self):
+        proximo_recorrido = self.informe
+
+        for i in range(len(self.informe[0])):
+            self.contador_ceros = 0
+            self.contador_unos = 0
+            self.unos = []
+            self.ceros = []
+
+            for binario in proximo_recorrido:
+                if binario[i] == '0':
+                    self.contador_ceros = self.contador_ceros + 1
+                    self.ceros.append(binario)
+                else:
+                    self.contador_unos = self.contador_unos + 1
+                    self.unos.append(binario)
+
+            if self.contador_unos < self.contador_ceros:
+                proximo_recorrido = self.unos
+            else:
+                proximo_recorrido = self.ceros
+
+            if len(proximo_recorrido) == 1:
+                binario = proximo_recorrido[0]
+                return binario
+
 print(consumo_energia(informe))
+
+soporte_vital = SoporteVital(informe)
+print(soporte_vital.clasificacion)

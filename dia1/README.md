@@ -54,7 +54,7 @@ En su lugar, considere las sumas de una ventana deslizante de tres medidas . Nue
 
 Comience comparando la primera y la segunda ventana de tres mediciones. Las mediciones en la primera ventana están marcados A( 199, 200, 208); su suma es 199 + 200 + 208 = 607. La segunda ventana se marca B( 200, 208, 210); su suma es 618. La suma de las medidas en la segunda ventana es mayor que la suma de la primera, por lo que esta primera comparación aumentó .
 
-Su objetivo ahora es contar el número de veces que la suma de medidas en esta ventana deslizante aumenta con respecto a la suma anterior. Entonces, compare Acon B, luego compare Bcon C, luego Ccon D, y así sucesivamente. Deténgase cuando no queden suficientes medidas para crear una nueva suma de tres medidas.
+Su objetivo ahora es contar el número de veces que la suma de medidas en esta ventana deslizante aumenta con respecto a la suma anterior. Entonces, compare A con B, luego compare B con C, luego C con D, y así sucesivamente. Deténgase cuando no queden suficientes medidas para crear una nueva suma de tres medidas.
 
 En el ejemplo anterior, la suma de cada ventana de tres medidas es la siguiente:
 
